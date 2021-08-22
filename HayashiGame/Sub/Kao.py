@@ -1,5 +1,4 @@
 from . import Global
-from . import MyBullet
 
 class Kao:
     jumpSize = -5
