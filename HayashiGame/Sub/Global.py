@@ -1,8 +1,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 import random
-import Sub.Kao
-
+from . import Kao
 
 WINDOW_HEIGHT = 600  # ウィンドウの高さ
 WINDOW_WIDTH = 1000   # ウィンドウの幅
@@ -14,7 +13,7 @@ cv:tk.Canvas
 kao_tkimg:ImageTk.PhotoImage
 root:tk.Tk
 
-kao:Sub.Kao
+kao:Kao
 
 btn:tk.Button
 pauseText = 999

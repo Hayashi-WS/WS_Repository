@@ -1,0 +1,19 @@
+
+
+# ↓2021.08.30 Hayashi
+cv:tk.Canvas
+kao_tkimg:ImageTk.PhotoImage
+root:tk.Tk
+# ↑2021.08.30 Hayashi
+
+
+# ↓2021.08.30 Hayashi
+# cv:tk.Canvas
+kao_tkimg:ImageTk.PhotoImage
+root:tk.Tk
+# ↑2021.08.30 Hayashi
+
+
+
+
+
