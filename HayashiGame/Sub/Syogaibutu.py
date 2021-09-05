@@ -20,7 +20,10 @@ class Syogaibutu:
             self.x, self.y, image=Global.syogaibutu_tkimg[self.No], tag="Syogaibutu")
 
     def changesize(self):
-        syogaibutu_img = Image.open("Image\\Syogaibutu.png")
+        try:
+            syogaibutu_img = Image.open("Image\\Syogaibutu.png")
+        except:
+            syogaibutu_img = Image.open("Image/Syogaibutu.png")
         syogaibutu_img = syogaibutu_img.resize((self.height,self.width))
         Global.syogaibutu_tkimg.append(ImageTk.PhotoImage(syogaibutu_img))
 
