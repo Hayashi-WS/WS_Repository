@@ -19,6 +19,11 @@ btn:tk.Button
 pauseText = 999
 startFlag = False
 
+#↓小林追記20210905--------------------------------------
+syogaibutu_tkimg = []
+syogaibutu = []
+#↑小林追記20210905--------------------------------------
+
 
 def pause(event):
     global pauseText
