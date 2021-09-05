@@ -33,5 +33,12 @@ if __name__ == "__main__":
   
     # インスタンス生成
     Sub.Global.kao = Sub.Kao.Kao(100, Sub.Global.WINDOW_HEIGHT - 30)
+
+    #小林追記-------------------------------------------------
+    Sub.Global.syogaibutu = [Sub.Syogaibutu.Syogaibutu(0, 0, 600, 10000, 10),
+                             Sub.Syogaibutu.Syogaibutu(1, 1150, 570, 200, 200),
+                             Sub.Syogaibutu.Syogaibutu(2, 2000, 570, 500, 200),
+                             Sub.Syogaibutu.Syogaibutu(3, 2750, 570, 1000, 400)]
+    #小林追記-------------------------------------------------
     
     Sub.Global.root.mainloop()

@@ -2,6 +2,7 @@ import tkinter as tk
 from PIL import Image, ImageTk
 import random
 import Sub.Kao
+import Sub.Syogaibutu
 
 
 WINDOW_HEIGHT = 600  # ウィンドウの高さ
@@ -19,6 +20,11 @@ kao:Sub.Kao
 btn:tk.Button
 pauseText = 999
 startFlag = False
+
+#小林追記--------------------------------------
+syogaibutu_tkimg = []
+syogaibutu = []
+#小林追記--------------------------------------
 
 
 def pause(event):
