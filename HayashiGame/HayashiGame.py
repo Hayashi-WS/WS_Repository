@@ -1,5 +1,5 @@
 import tkinter as tk
-from PIL import Image, ImageTk
+from PIL import ImageTk
 
 import Sub
 
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     except:
         kao_img = Image.open("Image/hayashi_kao.jpeg")
     # 0902奥村尚樹
-    
+
     Sub.Global.kao_tkimg = ImageTk.PhotoImage(kao_img)
 
     # メニューバー
