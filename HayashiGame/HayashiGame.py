@@ -1,5 +1,6 @@
 import tkinter as tk
-from PIL import Image, ImageTk
+from PIL import ImageTk
+from Lib.imagePackage import x_image
 
 import Sub
 
@@ -28,10 +29,10 @@ if __name__ == "__main__":
     # 奧村追記: try catch
     # 今後、関数化予定
     # 0902奥村尚樹
-    try:
-        kao_img = Image.open("Image\\hayashi_kao.jpeg")
-    except:
-        kao_img = Image.open("Image/hayashi_kao.jpeg")
+    # try:
+    #     kao_img = Image.open("Image\\hayashi_kao.jpeg")
+    # except:
+    #     kao_img = Image.open("Image/hayashi_kao.jpeg")
     # 0902奥村尚樹
     Sub.Global.kao_tkimg = ImageTk.PhotoImage(kao_img)
     

@@ -28,7 +28,7 @@ def pause(event):
             pauseText = 0
         else:
             pauseText = cv.create_text(WINDOW_WIDTH//2, WINDOW_HEIGHT//2, text="PAUSE",
-                       fill="red", font=("System", TEXT_PAUSE_SIZE))
+                        fill="red", font=("System", TEXT_PAUSE_SIZE))
 
 
 def left_click(event):
