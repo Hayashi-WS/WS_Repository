@@ -18,7 +18,13 @@ if __name__ == "__main__":
     Sub.Global.cv.bind('<Button-3>', Sub.Global.pause)
     Sub.Global.cv.pack()
 
-    # 画像の読み込み
+    # #画像の読み込み
+    # #↓0830 gorira
+    # #kao_img = Image.open("Image\\hayashi_kao.jpeg")
+    # kao_img = Image.open("Image/hayashi_kao.jpeg")
+    # #↑0830 aoki
+     
+
     # 奧村追記: try catch
     # 今後、関数化予定
     # 0902奥村尚樹
@@ -27,8 +33,8 @@ if __name__ == "__main__":
     except:
         kao_img = Image.open("Image/hayashi_kao.jpeg")
     # 0902奥村尚樹
-    
     Sub.Global.kao_tkimg = ImageTk.PhotoImage(kao_img)
+    
 
     # メニューバー
     menubar = tk.Menu(Sub.Global.root)
@@ -38,7 +44,7 @@ if __name__ == "__main__":
     # ボタン
     btn = tk.Button(Sub.Global.root, text='START', width=20, height=5, command=btn_click)
     btn.place(x=430, y=200)
-
+  
     # インスタンス生成
     Sub.Global.kao = Sub.Kao.Kao(100, Sub.Global.WINDOW_HEIGHT - 30)
     
