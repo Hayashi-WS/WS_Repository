@@ -1,6 +1,7 @@
 import tkinter as tk
-from PIL import ImageTk
-from Lib.imagePackage import x_image
+from PIL import ImageTk, Image
+
+import Lib
 
 import Sub
 
@@ -32,7 +33,7 @@ if __name__ == "__main__":
     # 0906奥村尚樹
     # imageトライキャッチを関数化
     # 好きな変数名 = x_image("windowsパス","macパス")
-    kao_img = x_image("Image\\hayashi_kao.jpeg")
+    kao_img = Image.open("Image/hayashi_kao.jpeg")
     # 0906奥村尚樹
 
     Sub.Global.kao_tkimg = ImageTk.PhotoImage(kao_img)

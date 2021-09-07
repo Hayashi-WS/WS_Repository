@@ -1,1 +1,1 @@
-from Lib.imagePackage import x_image
+from . import imagePackage
