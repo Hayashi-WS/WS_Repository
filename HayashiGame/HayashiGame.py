@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # 0906奥村尚樹
     # imageトライキャッチを関数化
     # 好きな変数名 = x_image("windowsパス","macパス")
-    kao_img = x_image("Image\\hayashi_kao.jpeg","Image/hayashi_kao.jpeg")
+    kao_img = x_image("Image\\hayashi_kao.jpeg")
     # 0906奥村尚樹
 
     Sub.Global.kao_tkimg = ImageTk.PhotoImage(kao_img)
