@@ -1,5 +1,7 @@
 import tkinter as tk
-from PIL import Image, ImageTk
+from PIL import ImageTk, Image
+
+import Lib
 
 import Sub
 
@@ -19,7 +21,21 @@ if __name__ == "__main__":
     Sub.Global.cv.pack()
 
     # 画像の読み込み
-    kao_img = Image.open("Image\\hayashi_kao.jpeg")
+    # 奧村追記: try catch
+    # 今後、関数化予定
+    # 0902奥村尚樹
+    # try:
+    #     kao_img = Image.open("Image\\hayashi_kao.jpeg")
+    # except:
+    #     kao_img = Image.open("Image/hayashi_kao.jpeg")
+    # 0902奥村尚樹
+
+    # 0906奥村尚樹
+    # imageトライキャッチを関数化
+    # 好きな変数名 = x_image("windowsパス","macパス")
+    kao_img = Image.open("Image/hayashi_kao.jpeg")
+    # 0906奥村尚樹
+
     Sub.Global.kao_tkimg = ImageTk.PhotoImage(kao_img)
 
     # メニューバー
@@ -30,7 +46,7 @@ if __name__ == "__main__":
     # ボタン
     btn = tk.Button(Sub.Global.root, text='START', width=20, height=5, command=btn_click)
     btn.place(x=430, y=200)
-  
+
     # インスタンス生成
     Sub.Global.kao = Sub.Kao.Kao(100, Sub.Global.WINDOW_HEIGHT - 30)
 
