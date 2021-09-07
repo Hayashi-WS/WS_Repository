@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import tkinter as tk
 from PIL import Image, ImageTk
 
@@ -30,8 +32,8 @@ if __name__ == "__main__":
     # ボタン
     btn = tk.Button(Sub.Global.root, text='START', width=20, height=5, command=btn_click)
     btn.place(x=430, y=200)
-  
+
     # インスタンス生成
     Sub.Global.kao = Sub.Kao.Kao(100, Sub.Global.WINDOW_HEIGHT - 30)
-    
+
     Sub.Global.root.mainloop()
