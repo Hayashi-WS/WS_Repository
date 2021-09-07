@@ -1,6 +1,8 @@
 import tkinter as tk
-from PIL import Image, ImageTk
-import random
+# ↓2021.09.08 Hayashi
+# from PIL import Image, ImageTk
+# import random
+# ↑2021.09.08 Hayashi
 from . import Kao
 
 WINDOW_HEIGHT = 600  # ウィンドウの高さ
@@ -8,9 +10,10 @@ WINDOW_WIDTH = 1000   # ウィンドウの幅
 
 TEXT_PAUSE_SIZE = 40
 
-
 cv:tk.Canvas
-kao_tkimg:ImageTk.PhotoImage
+# ↓2021.09.08 Hayashi
+# kao_tkimg:ImageTk.PhotoImage
+# ↑2021.09.08 Hayashi
 root:tk.Tk
 
 kao:Kao
