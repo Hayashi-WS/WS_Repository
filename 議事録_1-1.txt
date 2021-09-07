@@ -18,6 +18,7 @@
 　　ジャンプの高さ
 
 
+iniファイル
 [TEKI_1]
 Path = "xxxx//xx///xx//"
 Speed = 200
