@@ -28,6 +28,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="HayashiGame.py" />
+    <Compile Include="Sub\Syogaibutu.py" />
     <Compile Include="Sub\__init__.py">
       <SubType>Code</SubType>
     </Compile>
