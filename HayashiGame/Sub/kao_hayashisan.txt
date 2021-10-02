@@ -1,0 +1,22 @@
+# 関数化させる
+    jumpsize = 0
+    jumpcnt = 0
+
+    config_ini_path = 'config.ini'
+
+    def iniGet(iniFileName):
+        config_ini = configparser.ConfigParser()
+        if not os.path.exists(config_ini_path):
+            raise FileNotFoundError(errno.ENOENT, os.strerror(
+                errno.ENOENT), iniFileName)
+
+        config_ini.read(config_ini_path, encoding='utf-8')
+        read_character = config_ini['CHARACTER']
+        self.jumpSize = int(read_character.get('jumpSize'))
+        self.jumpCnt = int(read_character.get('jumpCnt'))
+        self.jumpSpan = int(read_character.get('jumpSpan'))
+        self.image_kao = read_character.get('image')
+
+        self.moveSize = int(read_character.get('moveSize'))
+        self.moveSpan = int(read_character.get('moveSpan'))
+    # ↓2021.09.14 Okumura

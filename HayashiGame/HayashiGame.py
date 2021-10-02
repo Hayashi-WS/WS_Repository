@@ -3,7 +3,6 @@ from PIL import ImageTk, Image
 import Lib
 import Sub
 
-
 def btn_click():
     btn.place_forget()
     Sub.Global.pauseText = 0
@@ -18,28 +17,6 @@ if __name__ == "__main__":
     Sub.Global.cv.bind('<Button-3>', Sub.Global.pause)
     Sub.Global.cv.pack()
 
-    # 画像の読み込み
-    # 奧村追記: try catch
-    # 今後、関数化予定
-    # 0902奥村尚樹
-    # try:
-    #     kao_img = Image.open("Image\\hayashi_kao.jpeg")
-    # except:
-    #     kao_img = Image.open("Image/hayashi_kao.jpeg")
-    # 0902奥村尚樹
-
-    # 0906奥村尚樹
-    # imageトライキャッチを関数化
-    # 好きな変数名 = x_image("windowsパス","macパス")
-    # ↓2021.09.08 Hayashi
-    # kao_img = Image.open("Image/hayashi_kao.jpeg")
-    # ↑2021.09.08 Hayashi
-    # 0906奥村尚樹
-
-    # ↓2021.09.08 Hayashi
-    # Sub.Global.kao_tkimg = ImageTk.PhotoImage(kao_img)
-    # ↑2021.09.08 Hayashi
-
     # メニューバー
     menubar = tk.Menu(Sub.Global.root)
     Sub.Global.root.configure(menu=menubar)
@@ -53,10 +30,19 @@ if __name__ == "__main__":
     Sub.Global.kao = Sub.Kao.Kao(100, Sub.Global.WINDOW_HEIGHT - 30)
 
     #↓小林追記20210905-------------------------------------------------
-    Sub.Global.syogaibutu = [Sub.Syogaibutu.Syogaibutu(0, 0, 600, 10000, 10),
-                             Sub.Syogaibutu.Syogaibutu(1, 1150, 570, 200, 200),
-                             Sub.Syogaibutu.Syogaibutu(2, 2000, 570, 500, 200),
-                             Sub.Syogaibutu.Syogaibutu(3, 2750, 570, 1000, 400)]
+    # mapファイル的なものを設定して障害物の配列等を入れておく
+    # Sub.Global.syogaibutu = [Sub.Syogaibutu.Syogaibutu(0, 0, 600, 10000, 10),
+
+    #                         Sub.Syogaibutu.Syogaibutu(1, 1150, 570, 200, 200),
+    #                         Sub.Syogaibutu.Syogaibutu(2, 2000, 570, 500, 200),
+    #                         Sub.Syogaibutu.Syogaibutu(3, 2750, 570, 1000, 400)]
     #↑小林追記20210905-------------------------------------------------
-    
+
+        # mapファイル的なものを設定して障害物の配列等を入れておく
+    Sub.Global.syogaibutu = [Sub.Syogaibutu.Syogaibutu(0, 600, 10000, 10, 0),
+
+                            Sub.Syogaibutu.Syogaibutu(1, 570, 200, 200, 100),
+                            Sub.Syogaibutu.Syogaibutu(2, 570, 500, 200, 1000),
+                            Sub.Syogaibutu.Syogaibutu(3, 570, 1000, 400, 2000)]
+
     Sub.Global.root.mainloop()
