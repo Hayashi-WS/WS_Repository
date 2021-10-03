@@ -23,10 +23,12 @@ pauseText = 999
 startFlag = False
 
 #↓小林追記20210905--------------------------------------
-syogaibutu_tkimg = []
-syogaibutu = []
+obstacle_tkimg = []
+obstacle = []
 #↑小林追記20210905--------------------------------------
 
+globalTime = 0
+mapNum = 0
 
 def pause(event):
     global pauseText
@@ -43,3 +45,9 @@ def left_click(event):
     if pauseText == 0 and kao.moveStop == False:
         kao.moveStop = True
         kao.jump()
+
+def timeStart():
+    global globalTime
+    if pauseText == 0:
+        globalTime += 1
+    root.after(1000, timeStart)

@@ -13,7 +13,7 @@ class Kao:
 
     # ↓2021.09.14 Okumura
     config_ini = configparser.ConfigParser()
-    config_ini_path = 'config.ini'
+    config_ini_path = 'Setting/config.ini'
 
     # 指定したiniファイルが存在しない場合、エラー発生
     if not os.path.exists(config_ini_path):

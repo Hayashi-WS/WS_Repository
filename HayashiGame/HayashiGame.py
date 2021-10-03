@@ -1,11 +1,33 @@
 import tkinter as tk
+import re
 from PIL import ImageTk, Image
 import Lib
 import Sub
 
+# グローバルで宣言しておかないと、以下の各関数内で同じオブジェクトの操作ができない
+startBtn:tk.Button
+
+def map_select(event):
+    global startBtn
+    mapText = event.widget.cget("text")
+    # ボタンテキストの数字部分を抽出
+    Sub.Global.mapNum = re.sub(r"\D", "", mapText)
+    mapBtn1.place_forget() # 即席で一個ずつ消す方法で実装
+    mapBtn2.place_forget()
+    # マップを選択したらスタートボタン表示
+    startBtn = tk.Button(Sub.Global.root, text='START', width=20, height=5, command=btn_click)
+    startBtn.place(x=430, y=200)
+
 def btn_click():
-    btn.place_forget()
+    global startBtn
+    startBtn.place_forget()
+    # マップ番号が確定してから障害物のオブジェクト作成
+    Sub.Global.obstacle = [Sub.Obstacle.Obstacle(0, 600, 10000, 10, 0), # wait秒数もiniファイルから取得するようにしないといけない
+                            Sub.Obstacle.Obstacle(1, 570, 200, 200, 2),
+                            Sub.Obstacle.Obstacle(2, 570, 500, 200, 5),
+                            Sub.Obstacle.Obstacle(3, 570, 1000, 400, 7)]
     Sub.Global.pauseText = 0
+    Sub.Global.timeStart()
 
 
 if __name__ == "__main__":
@@ -22,9 +44,19 @@ if __name__ == "__main__":
     Sub.Global.root.configure(menu=menubar)
     menubar.add_command(label="QUIT", underline=0, command=Sub.Global.root.quit)
 
-    # ボタン
-    btn = tk.Button(Sub.Global.root, text='START', width=20, height=5, command=btn_click)
-    btn.place(x=430, y=200)
+    # マップボタン
+    # 1
+    mapBtn1 = tk.Button(Sub.Global.root, text='MAP 1', width=20, height=2)
+    mapBtn1.place(x=50, y=50)
+    mapBtn1.bind("<ButtonPress>", map_select)
+    # 2
+    mapBtn2 = tk.Button(Sub.Global.root, text='MAP 2', width=20, height=2)
+    mapBtn2.place(x=50, y=95)
+    mapBtn2.bind("<ButtonPress>", map_select)
+
+    # スタートボタン
+    #btn = tk.Button(Sub.Global.root, text='START', width=20, height=5, command=btn_click)
+    #btn.place(x=430, y=200)
 
     # インスタンス生成
     Sub.Global.kao = Sub.Kao.Kao(100, Sub.Global.WINDOW_HEIGHT - 30)
@@ -38,11 +70,10 @@ if __name__ == "__main__":
     #                         Sub.Syogaibutu.Syogaibutu(3, 2750, 570, 1000, 400)]
     #↑小林追記20210905-------------------------------------------------
 
-        # mapファイル的なものを設定して障害物の配列等を入れておく
-    Sub.Global.syogaibutu = [Sub.Syogaibutu.Syogaibutu(0, 600, 10000, 10, 0),
-
-                            Sub.Syogaibutu.Syogaibutu(1, 570, 200, 200, 100),
-                            Sub.Syogaibutu.Syogaibutu(2, 570, 500, 200, 1000),
-                            Sub.Syogaibutu.Syogaibutu(3, 570, 1000, 400, 2000)]
+    # mapファイル的なものを設定して障害物の配列等を入れておく
+    #Sub.Global.obstacle = [Sub.Obstacle.Obstacle(0, 600, 10000, 10, 0),
+    #                        Sub.Obstacle.Obstacle(1, 570, 200, 200, 2),
+    #                        Sub.Obstacle.Obstacle(2, 570, 500, 200, 5),
+    #                        Sub.Obstacle.Obstacle(3, 570, 1000, 400, 7)]
 
     Sub.Global.root.mainloop()
