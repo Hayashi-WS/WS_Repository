@@ -22,6 +22,10 @@ def btn_click():
     global startBtn
     startBtn.place_forget()
     # マップ番号が確定してから障害物のオブジェクト作成
+
+    # マップファイルを読み込む
+    # 障害物の数、サイズ出現時間を読み込んで、その設定値によってインスタンスを作成
+
     Sub.Global.obstacle = [Sub.Obstacle.Obstacle(0, 600, 10000, 10, 0), # wait秒数もiniファイルから取得するようにしないといけない
                             Sub.Obstacle.Obstacle(1, 570, 200, 200, 2),
                             Sub.Obstacle.Obstacle(2, 570, 500, 200, 5),
