@@ -55,7 +55,7 @@ class Gorilla:
         global gorilla_tkimg
         gorilla_tkimg = ImageTk.PhotoImage(gorilla_img)
         self.id = Global.cv.create_image(
-            self.x, self.y, image=gorilla_tkimg, tag="Gorilla")
+            self.x, self.y, image=gorilla_tkimg, tag="gorilla")
         # ↑2021.09.08 Hayashi
 
     def leftRight_Move(self):
