@@ -1,3 +1,3 @@
 from . import Global
-from . import Kao
+from . import Gorilla
 from . import Obstacle

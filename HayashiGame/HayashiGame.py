@@ -63,7 +63,7 @@ if __name__ == "__main__":
     #btn.place(x=430, y=200)
 
     # インスタンス生成
-    Sub.Global.kao = Sub.Kao.Kao(100, Sub.Global.WINDOW_HEIGHT - 30)
+    Sub.Global.Gorilla = Sub.Gorilla.Gorilla(100, Sub.Global.WINDOW_HEIGHT - 52)
 
     #↓小林追記20210905-------------------------------------------------
     # mapファイル的なものを設定して障害物の配列等を入れておく

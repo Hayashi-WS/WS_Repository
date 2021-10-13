@@ -3,7 +3,7 @@ import tkinter as tk
 # from PIL import Image, ImageTk
 # import random
 # ↑2021.09.08 Hayashi
-from . import Kao
+from . import Gorilla
 
 WINDOW_HEIGHT = 600  # ウィンドウの高さ
 WINDOW_WIDTH = 1000   # ウィンドウの幅
@@ -12,11 +12,11 @@ TEXT_PAUSE_SIZE = 40
 
 cv:tk.Canvas
 # ↓2021.09.08 Hayashi
-# kao_tkimg:ImageTk.PhotoImage
+# gorilla_tkimg:ImageTk.PhotoImage
 # ↑2021.09.08 Hayashi
 root:tk.Tk
 
-kao:Kao
+gorilla:Gorilla
 
 btn:tk.Button
 pauseText = 999
@@ -42,9 +42,9 @@ def pause(event):
 
 
 def left_click(event):
-    if pauseText == 0 and kao.moveStop == False:
-        kao.moveStop = True
-        kao.jump()
+    if pauseText == 0 and gorilla.moveStop == False:
+        gorilla.moveStop = True
+        gorilla.jump()
 
 def timeStart():
     global globalTime

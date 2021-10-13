@@ -9,7 +9,7 @@ import errno
 from . import Global
 
 
-class Kao:
+class Gorilla:
 
     # ↓2021.09.14 Okumura
     config_ini = configparser.ConfigParser()
@@ -27,7 +27,7 @@ class Kao:
     jumpSize = int(read_character.get('jumpSize'))
     jumpCnt = int(read_character.get('jumpCnt'))
     jumpSpan = int(read_character.get('jumpSpan'))
-    image_kao = read_character.get('image')
+    image_gorilla = read_character.get('image')
 
     moveSize = int(read_character.get('moveSize'))
     moveSpan = int(read_character.get('moveSpan'))
@@ -46,21 +46,22 @@ class Kao:
     def draw(self):
         # ↓2021.09.08 Hayashi
         # self.id = Global.cv.create_image(
-        #     self.x, self.y, image=Global.kao_tkimg, tag="kao")
+        #     self.x, self.y, image=Global.gorilla_tkimg, tag="Gorilla")
         # os.path.joinを使えばOSに依存せずにパスの指定が可能
 
-        kao_img = Image.open(self.image_kao)
+        gorilla_img = Image.open(self.image_gorilla)
+        gorilla_img = gorilla_img.resize((100,100))
         # PhotoImageオブジェクトを参照し続けるために、グローバル変数にしないといけない
-        global kao_tkimg
-        kao_tkimg = ImageTk.PhotoImage(kao_img)
+        global gorilla_tkimg
+        gorilla_tkimg = ImageTk.PhotoImage(gorilla_img)
         self.id = Global.cv.create_image(
-            self.x, self.y, image=kao_tkimg, tag="kao")
+            self.x, self.y, image=gorilla_tkimg, tag="Gorilla")
         # ↑2021.09.08 Hayashi
 
     def leftRight_Move(self):
         if Global.pauseText == 0 and self.moveStop == False:
-            Global.cv.move(self.id, Kao.moveSize * self.leftRight, 0)
-            self.x += Kao.moveSize * self.leftRight
+            Global.cv.move(self.id, Gorilla.moveSize * self.leftRight, 0)
+            self.x += Gorilla.moveSize * self.leftRight
             self.leftRight *= -1
         Global.root.after(self.moveSpan, self.leftRight_Move)
 
