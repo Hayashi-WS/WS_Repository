@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Lib\imagePackage.py" />
+    <Compile Include="Lib\IniLib.py" />
+    <Compile Include="Lib\__init__.py" />
     <Compile Include="Sub\Global.py">
       <SubType>Code</SubType>
     </Compile>
@@ -32,7 +35,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Lib\" />
+    <Folder Include="Lib\__pycache__\" />
     <Folder Include="Sub\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\__pycache__\imagePackage.cpython-38.pyc" />
+    <Content Include="Lib\__pycache__\imagePackage.cpython-39.pyc" />
+    <Content Include="Lib\__pycache__\__init__.cpython-38.pyc" />
+    <Content Include="Lib\__pycache__\__init__.cpython-39.pyc" />
+    <Content Include="Lib\__pycache__\__init__.cpython-39.pyc.140556509449552" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
